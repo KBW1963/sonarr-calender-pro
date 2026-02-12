@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  sonarr-calendar:
+    build: .
+    container_name: sonarr-calendar
+    restart: unless-stopped
+    ports:
+      - "8000:8000"   # Web interface for the calendar
+    volumes:
+      - ./config:/config          # Persistent configuration
+      - ./output:/output          # Generated HTML & JSON
+      - ./cache:/cache            # Cached poster images
+    environment:
+      - SONARR_URL=http://your-sonarr-ip:8989   # ← CHANGE THIS
+      - SONARR_API_KEY=your_api_key_here        # ← CHANGE THIS
+      - DAYS_PAST=7
+      - DAYS_FUTURE=30
+      - REFRESH_INTERVAL_HOURS=6
+      - ENABLE_HTTP_SERVER=true   # Starts a web server on port 8000
+    # If you don't need the web server, remove the 'ports' line and set ENABLE_HTTP_SERVER=false
