@@ -12,10 +12,11 @@ services:
       - ./output:/output          # Generated HTML & JSON
       - ./cache:/cache            # Cached poster images
     environment:
-      - SONARR_URL=http://your-sonarr-ip:8989   # ← CHANGE THIS
-      - SONARR_API_KEY=your_api_key_here        # ← CHANGE THIS
-      - DAYS_PAST=7
-      - DAYS_FUTURE=30
-      - REFRESH_INTERVAL_HOURS=6
+      - SONARR_URL=http://your-sonarr-ip:8989   # ← CHANGE THIS to your Sonarr url
+      - SONARR_API_KEY=your_api_key_here        # ← CHANGE THIS get you API key from Sonarr
+      - DAYS_PAST=7                # Change this if you wish Default is -7 Days from today
+      - DAYS_FUTURE=30             # Change this if you wish Default is 30 Days in the future from today
+      - REFRESH_INTERVAL_HOURS=6   # Default update interval
       - ENABLE_HTTP_SERVER=true   # Starts a web server on port 8000
+
     # If you don't need the web server, remove the 'ports' line and set ENABLE_HTTP_SERVER=false
