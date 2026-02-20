@@ -1,4 +1,5 @@
 # 🎬 Sonarr Calendar Tracker Pro
+**Note: This was my first attempt and was very long, but does work. I elected to have another try which is the here - https://github.com/KBW1963/sonarr_calendar.
 
 A professional, feature-rich calendar tracker for Sonarr that generates beautiful HTML calendars with detailed episode information, progress tracking, and one-click access to your shows.
 
